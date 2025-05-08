@@ -21,64 +21,93 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>Quiz About Sage/h1>
     <hr />
     <!-- Movie Question -->
-    <form id="movie-form">
+    <form id="major-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+        😉 What is my major?
+        <select id="major-answer">
+          <option value="major1">dance💃</option>
+          <option value="major2">art🎨</option>
+          <option value="major3">vocal🎤</option>
+          <option value="major4">tech👩🏻‍💻</option>
+          <option value="major5">instrumental🎻</option>
+          <option value="major5">drama🎭</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Major Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="major-result"></div>
     <hr />
     <!-- Book Question -->
-    <form id="book-form">
+    <form id="nature-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+        ☀️ What is my favorite nature spot?
+        <select id="nature-answer">
+          <option value="nature1">beach˖°𓇼🌊⋆🐚</option>
+          <option value="nature2">park🏞️</option>
+          <option value="nature3">forest💚🏕️🌿🌲</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Nature Answer</button>
     </form>
-    <div id="book-result"></div>
+    <div id="nature-result"></div>
+    
+    <form id="food-form">
+      <label>
+        ☀️ What is my favorite food?
+        <select id="food-answer">
+          <option value="food1">burgers🍔</option>
+          <option value="food2">pizza🍕</option>
+          <option value="food3">tacos🌮</option>
+          <option value="food4">sushi🍣🥢</option>
+          <option value="food5">pasta🍝</option>
+        </select>
+      </label>
+      <button type="submit">Check Food Answer</button>
+    </form>
+    <div id="food-result"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       //Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
+      $("#major-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#major-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
+        if (answer === "major3") {
+          $("#major-result").text("YESSSS!");
         } else {
-          $("#movie-result").text("Try Again!");
+          $("#major-result").text("Nuh-Uh!");
         }
       });
 
       //Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+      $("#nature-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+        var $answer = $("#nature-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
+        if (answer === "nature1") {
+          $("#nature-result").text("YUHHHHH!");
         } else {
-          $("#book-result").text("Try Again!");
+          $("#nature-result").text("Nah!");
+        }
+      });
+      
+      //Food Question jQuery Code
+       $("#food-form").on("submit", function (event) {
+        event.preventDefault();
+       var $answer = $("#food-answer");
+        var answer = $answer.val();
+
+        if (answer === "food5") {
+          $("#food-result").text("YUPPPP!");
+        } else {
+          $("#food-result").text("NOPE!");
         }
       });
     </script>
