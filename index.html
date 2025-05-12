@@ -21,7 +21,7 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About Sage/h1>
+    <h1>Quiz About Sage  ⋆🔮✧˚.💜⋆  
     <hr />
     <!-- Movie Question -->
     <form id="major-form">
@@ -30,7 +30,10 @@ Select ONE Additional Feature to Add
         <select id="major-answer">
           <option value="major1">dance💃</option>
           <option value="major2">art🎨</option>
-          <option value="major3">vocal🎤</option>
+          <option value="major3">vocal🎤</option 
+            id="major-pic"
+            src="https://gardenandgun.com/wp-content/uploads/2024/02/Atlantic-Beach_Terry-Ward-1600x1200.jpg"
+            width="150" >
           <option value="major4">tech👩🏻‍💻</option>
           <option value="major5">instrumental🎻</option>
           <option value="major5">drama🎭</option>
@@ -39,6 +42,10 @@ Select ONE Additional Feature to Add
       <button type="submit">Check Major Answer</button>
     </form>
     <div id="major-result"></div>
+       <div id="major-pic"></div>
+      <img 
+           src="https://gardenandgun.com/wp-content/uploads/2024/02/Atlantic-Beach_Terry-Ward-1600x1200.jpg"
+           width="150"/>
     <hr />
     <!-- Book Question -->
     <form id="nature-form">
@@ -53,10 +60,11 @@ Select ONE Additional Feature to Add
       <button type="submit">Check Nature Answer</button>
     </form>
     <div id="nature-result"></div>
+      
     
     <form id="food-form">
       <label>
-        ☀️ What is my favorite food?
+        🍽️ What is my favorite food?
         <select id="food-answer">
           <option value="food1">burgers🍔</option>
           <option value="food2">pizza🍕</option>
@@ -110,6 +118,33 @@ Select ONE Additional Feature to Add
           $("#food-result").text("NOPE!");
         }
       });
+      
+      $("#major-form").animate(
+        {
+          width: "400px",
+          marginLeft: "30px",
+          borderWidth: "10px",
+      });
+      
+       $("#nature-form").animate(
+        {
+          width: "400px",
+          marginLeft: "30px",
+          borderWidth: "10px",
+      });
+      
+       $("#food-form").animate(
+        {
+          width: "400px",
+          marginLeft: "30px",
+          borderWidth: "10px",
+      });
+      
+         $result = $("#food-result");
+      $result.hide();
+      $("#food-result").hide();
+      $result.slideDown(5000);
+       $("#food-result").slideDown(5000);
     </script>
   </body>
 
