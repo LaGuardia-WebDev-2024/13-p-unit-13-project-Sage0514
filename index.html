@@ -19,6 +19,8 @@ Select ONE Additional Feature to Add
     <meta charset="utf-8" />
     <title>Unit 13 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
   </head>
   <body>
     <h1>Quiz About Sage  ⋆🔮✧˚.💜⋆  
@@ -30,10 +32,7 @@ Select ONE Additional Feature to Add
         <select id="major-answer">
           <option value="major1">dance💃</option>
           <option value="major2">art🎨</option>
-          <option value="major3">vocal🎤</option 
-            id="major-pic"
-            src="https://gardenandgun.com/wp-content/uploads/2024/02/Atlantic-Beach_Terry-Ward-1600x1200.jpg"
-            width="150" >
+          <option value="major3">vocal🎤</option>
           <option value="major4">tech👩🏻‍💻</option>
           <option value="major5">instrumental🎻</option>
           <option value="major5">drama🎭</option>
@@ -43,9 +42,6 @@ Select ONE Additional Feature to Add
     </form>
     <div id="major-result"></div>
        <div id="major-pic"></div>
-      <img 
-           src="https://gardenandgun.com/wp-content/uploads/2024/02/Atlantic-Beach_Terry-Ward-1600x1200.jpg"
-           width="150"/>
     <hr />
     <!-- Book Question -->
     <form id="nature-form">
@@ -60,7 +56,6 @@ Select ONE Additional Feature to Add
       <button type="submit">Check Nature Answer</button>
     </form>
     <div id="nature-result"></div>
-      
     
     <form id="food-form">
       <label>
@@ -106,6 +101,22 @@ Select ONE Additional Feature to Add
         }
       });
       
+        var natureImages = {
+        nature1:
+          "https://gardenandgun.com/wp-content/uploads/2024/02/Atlantic-Beach_Terry-Ward-1600x1200.jpg",
+        park: "",
+        forest: "",
+      };
+            $("#nature-form").on("submit", function (event) {
+        event.preventDefault();
+        var $natureType = $(this).find("[name=type]"); // scoped
+        var natureType = $natureType.val();
+        var $img = $("<img>");
+        $img.width(100);
+        $img.attr("src", natureImages[natureType]);
+        $img.appendTo("body");
+      });
+      
       //Food Question jQuery Code
        $("#food-form").on("submit", function (event) {
         event.preventDefault();
@@ -118,6 +129,7 @@ Select ONE Additional Feature to Add
           $("#food-result").text("NOPE!");
         }
       });
+      
       
       $("#major-form").animate(
         {
@@ -146,6 +158,7 @@ Select ONE Additional Feature to Add
       $result.slideDown(5000);
        $("#food-result").slideDown(5000);
     </script>
+    </h1>
   </body>
 
   <!--- Taken From Khan Academy HTML/JS: Making webpages interactive with jQuery-->
